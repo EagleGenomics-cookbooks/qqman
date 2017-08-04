@@ -10,7 +10,7 @@ provisioner:
 verifier:
   name: inspec
   format: doc
-  sudo_command: '. /etc/profile;'
+  sudo_command: . /etc/profile;
 
 platforms:
   - name: ubuntu-14.04

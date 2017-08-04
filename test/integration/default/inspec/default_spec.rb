@@ -17,3 +17,7 @@ describe command('Rscript -e \'packageVersion("qqman")\'') do
   its('exit_status') { should eq 0 }
   its('stdout') { should match(/0.1.4/) }
 end
+
+describe os_env('QQMAN_VERSION') do
+  its('content') { should eq '0.1.4' }
+end

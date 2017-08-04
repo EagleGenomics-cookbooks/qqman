@@ -8,3 +8,7 @@
 include_recipe 'r'
 
 r_package 'qqman'
+
+magic_shell_environment 'QQMAN_VERSION' do
+  value node['qqman']['version']
+end
