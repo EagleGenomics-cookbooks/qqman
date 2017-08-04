@@ -1,0 +1,27 @@
+---
+driver:
+  name: docker
+  use_sudo: false
+  customize:
+  memory: 4MB
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus: 12.19.36
+
+verifier:
+  name: inspec
+  format: doc
+  sudo_command: '. /etc/profile;'
+
+platforms:
+  - name: ubuntu-14.04
+
+driver_config:
+  instance_name: qqman
+
+suites:
+  - name: default
+    run_list:
+      - recipe[qqman::default]
+    attributes:
