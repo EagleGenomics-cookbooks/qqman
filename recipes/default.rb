@@ -7,8 +7,4 @@
 
 include_recipe 'r'
 
-execute 'Rscript install qqman' do
-  command 'Rscript -e "install.packages(\"qqman\")"'
-  not_if { ::File.exist?('/usr/local/lib/R/site-library/qqman') }
-end
-
+r_package 'qqman'
